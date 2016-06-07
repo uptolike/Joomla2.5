@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension version="2.5" type="plugin" group="content" method="upgrade">
+    <name>Uptolike Share Buttons</name>
+    <author>uptolike</author>
+    <creationDate>07.2014</creationDate>
+    <copyright>(C) 2014 by UpToLike.com team (http://uptolike.com)</copyright>
+    <license>GNU/GPL: http://www.gnu.org/copyleft/gpl.html</license>
+    <authorEmail>contact@uptolike.com</authorEmail>
+    <authorUrl>http://uptolike.com</authorUrl>
+    <version>1.0</version>
+    <description>Uptolike Share Button plugin
+        <![CDATA[ <br><br>]]>
+        Данный плагин полностью бесплатен. Мы регулярно его улучшаем и добавляем новые функции.
+        <![CDATA[ <br>]]>
+        Пожалуйста, оставьте свой отзыв на <![CDATA[<a href="http://extensions.joomla.org/extensions/extension/social-web/social-share/uptolike-share-buttons"  target="_blank">данной</a>]]> странице. Спасибо!
+        <![CDATA[
+<script src="/plugins/content/uptolike/md5.js"></script>
+<script src="/plugins/content/uptolike/main.js"> </script>
+<link rel="stylesheet" type="text/css" href="/plugins/content/uptolike/style.css">
+<style type="text/css">
+</style>
+<div id="before_install" style="display:none;">
+    Плагин социальных кнопок Uptolike Share Buttons успешно установлен! <br>
+    Для их отображения необходимо <b>включить плагин</b> на странице настроек.<br>
+    Для просмотра статистики: запросить секретный ключ.<br>
+</div>
+<div class="wrap" id="after_install" style="display:none;">
+    <h2 class="placeholder">&nbsp;</h2>
+    <div id="wrapper">
+        <h2 class="nav-tab-wrapper">
+            <a class="nav-tab nav-tab-active" href="#cons" id="cons">
+                Конструктор
+            </a>
+            <a class="nav-tab" href="#stat" id="stat">
+                Статистика
+            </a>
+
+        </h2>
+        <div class="wrapper-tab active" id="con_cons">
+            <iframe id='cons_iframe' style='height: 897px; width: 100%;'></iframe>
+            <br>
+            <!-- <a onclick="getCode();" href="#">
+                 <button type="reset">Сохранить изменения</button>
+             </a>-->
+        </div>
+        <div class="wrapper-tab" id="con_stat">
+
+                <iframe id="stats_iframe">
+                            </iframe>
+                <div id="before_key_req">Введите ваш адрес электронной почты для получения ключа.</div>
+                <div id="after_key_req">На ваш адрес электронной почты отправлен секретный ключ. Введите его в поле ниже.<br>
+                Если письмо с ключом долго не приходит, возможно оно попало в папку Спам.<br>
+                Если ключ так и не был получен напишите письмо в службу поддержки: <a href="mailto:uptolikeshare@gmail.com">uptolikeshare@gmail.com</a>
+                </div>
+
+
+                <table>
+                <tr id="email_tr"> <td>Email: </td> <td> <input type="text" id="uptolike_email_field"> </td> </tr>
+                <tr id="cryptkey_field"> <td>Ключ: </td> <td> <input type="text" id="uptolike_cryptkey"> </td> </tr>
+                <tr id="get_key_btn_field"> <td>  </td> <td> <button id="get_key" type="button"> Получить ключ </button> </td> </tr>
+                <tr id="bad_key_field"><td colspan="2" >Введен неверный ключ! Убедитесь что вы скопировали ключ без лишних символов (пробелов и т.д.)</td></tr>
+                <tr id="key_auth_field"> <td>  </td> <td> <button id="auth" type="button"> Авторизация </button> </td> </tr>
+                </table>
+                <div>Обратная связь: <a href="mailto:uptolikeshare@gmail.com">uptolikeshare@gmail.com</a><div>
+
+
+
+        </div>
+
+    </div>
+</div>
+<script type="text/javascript">
+    window.onload = function ()
+    {
+        if (document.location.search == "?option=com_installer&view=install") {
+            document.getElementById('before_install').style.display = 'block'
+        } else document.getElementById('after_install').style.display = 'block'
+    }
+</script>
+        ]]>
+    </description>
+    <languages folder="language">
+        <language tag="ru-RU">ru-RU/ru-RU.plg_content_uptolike.ini</language>
+        <language tag="ru-RU">ru-RU/ru-RU.plg_content_uptolike.sys.ini</language>
+        <language tag="en-GB">en-GB/en-GB.plg_content_uptolike.ini</language>
+        <language tag="en-GB">en-GB/en-GB.plg_content_uptolike.sys.ini</language>
+    </languages>
+    <files>
+        <filename plugin="uptolike">uptolike.php</filename>
+		<filename>index.html</filename>
+        <filename>style.css</filename>
+        <filename>main.js</filename>
+        <filename>md5.js</filename>
+    </files>
+    <config>
+        <fields name="params">
+
+            <fieldset name="basic" >
+                <field type="text"  name="widget_code" filter="raw"></field>
+                <field type="text"  name="id_number"  ></field>
+                <field type="text"  name="uptolike_email"  ></field>
+                <field type="text"  name="uptolike_json"  filter="raw"></field>
+                <field type="text"  name="uptolike_partner" ></field>
+                <field type="text"  name="uptolike_project" ></field>
+                <field name="on_main"
+                       description="PLG_UPTOLIKE_SHOW_ON_TOP"
+                       label = "PLG_UPTOLIKE_SHOW_ON_TOP"
+                       type="radio"
+                       default="true"  >
+                    <option value="true">Да</option>
+                    <option value="false">нет</option>
+                </field>
+                <field type="list" name='widget_position' label="PLG_UPTOLIKE_WIDGET_POSITION">
+                        <option  value='top'>PLG_UPTOLIKE_TOP_ONLY</option>
+                        <option  value='bottom'>PLG_UPTOLIKE_BOTTOM_ONLY</option>
+                        <option  value='both'>PLG_UPTOLIKE_BOTH</option>
+                </field>
+                <field type="list" name='widget_align' label="PLG_UPTOLIKE_WIDGET_ALIGN">
+                    <option  value='left'>PLG_UPTOLIKE_LEFT</option>
+                    <option  value='center'>PLG_UPTOLIKE_CENTER</option>
+                    <option  value='right'>PLG_UPTOLIKE_RIGHT</option>
+                </field>
+            </fieldset>
+        </fields>
+    </config>
+<updateservers>
+    <server type="extension" priority="1" name="uptolike">
+        http://uptolike.com/joomla
+    </server></updateservers>
+</extension>

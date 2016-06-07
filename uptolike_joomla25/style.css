@@ -1,0 +1,67 @@
+.new_block label { display: inline-block; width: 140px; text-align: right; }
+
+.nav-tab {
+    border-style: solid;
+    border-color: #ccc #ccc #f9f9f9;
+    border-width: 1px 1px 0;
+    color: #c1c1c1;
+    text-shadow: rgba(255,255,255,1) 0 1px 0;
+    font-size: 12px;
+    line-height: 16px;
+    display: inline-block;
+    padding: 4px 14px 6px;
+    text-decoration: none;
+    margin: 0 6px -1px 0;
+    -moz-border-radius: 5px 5px 0 0;
+    -webkit-border-top-left-radius: 5px;
+    -webkit-border-top-right-radius: 5px;
+    -khtml-border-top-left-radius: 5px;
+    -khtml-border-top-right-radius: 5px;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+}
+.nav-tab-active {
+    border-width: 1px;
+    color: #464646;
+}
+h2.placeholder {
+    font-size: 1px;
+    padding: 1px;
+    margin: 0px;
+    height: 2px;
+}
+div.wrapper-tab {display: none;}
+div.wrapper-tab.active {
+    display: block;
+    width: 100%;
+}
+input#id_number {width: 520px;}
+
+.pos1 .field {clear:both; text-align:right;}
+.pos1 label {float:left;}
+.pos1 button {float:right;}
+#uptolike_cryptkey {
+
+    width: 300px;
+
+}
+#cryptkey_field {
+    display: none;
+}
+#key_auth_field {
+    display: none;
+}
+#bad_key_field{
+    display: none;
+    color: red;
+}
+
+iframe#stats_iframe {
+    width: 100%;
+    /*display: none;*/
+}
+
+#after_key_req {
+    display: none;
+}
+
